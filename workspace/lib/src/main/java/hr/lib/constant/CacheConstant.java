@@ -9,4 +9,6 @@ public class CacheConstant {
 	
 	public final static String LITERAL_INIT_CLASS = "LITERAL-INIT-CLASS";
 	public final static String LITERAL_REQUEST_CLASS = "LITERAL-REQUEST-CLASS";
+	
+	public final static String LITERAL_BEAN_CLASS = "LITERAL-BEAN-CLASS";
 }
