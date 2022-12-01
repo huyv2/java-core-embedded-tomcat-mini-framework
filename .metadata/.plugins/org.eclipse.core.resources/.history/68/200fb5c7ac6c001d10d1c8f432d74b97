@@ -1,8 +1,0 @@
-package tpb.lib.cache.constant;
-
-public enum TimeUnit {
-	SECOND,
-	MINUTE,
-	HOUR,
-	DAY
-}
