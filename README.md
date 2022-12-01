@@ -4,5 +4,7 @@ Data example:
 {
     "source": "hl",
     "request_signature": "abcd",
-    "id": "19044440090"
+    "token": "19044440090",
+	"amount": 100000,
+	"type": "A"
 }
