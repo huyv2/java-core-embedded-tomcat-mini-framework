@@ -1,5 +1,5 @@
 # java-core-embedded-tomcat-mini-framework
-Just use java core, embedded tomcat and a good mindset how to build a framework from origin. Follwing Domain design driven
+Just use java core, embedded tomcat and a good mindset how to build a framework from origin. Follwing domain driven design
 Data example:
 {
     "source": "hl",
