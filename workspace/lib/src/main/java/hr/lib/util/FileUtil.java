@@ -9,9 +9,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.reflections.Reflections;
 
 public class FileUtil {
 	private static Logger log = LogManager.getLogger(FileUtil.class);
@@ -50,6 +52,20 @@ public class FileUtil {
         }
         
         return data;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public static <T> List<Class> getClassesV2(String packageName, Class<T> ofBaseLiteralClass) {
+		List<Class> classes = new ArrayList<Class>();
+		
+    	Reflections reflections = new Reflections(packageName);
+    	Set<Class<? extends T>> classSets = reflections.getSubTypesOf(ofBaseLiteralClass);
+    	    	
+    	for(Class<? extends T> classSet : classSets) {
+    		classes.add(classSet);
+    	}
+    	
+    	return classes;
 	}
 	
     @SuppressWarnings("rawtypes")

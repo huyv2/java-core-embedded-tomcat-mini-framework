@@ -20,7 +20,7 @@ public class RequestDtoInit extends BaseInit {
 	public void init() throws ClassNotFoundException, IOException, InstantiationException, IllegalAccessException {
 		String dtoPackage = ParamConstant.DTO_PACKAGE;
 		Cache literalRequestClassCache = (Cache) CacheManager.getInstance().createCache(CacheConstant.LITERAL_REQUEST_CLASS);
-		List<Class> initLiteralList = FileUtil.getClasses(dtoPackage, BaseRequestDto.class);
+		List<Class> initLiteralList = FileUtil.getClassesV2(dtoPackage, BaseRequestDto.class);
 		for(Class literal : initLiteralList) {
 			if (Modifier.isAbstract(literal.getModifiers())
 					|| Modifier.isInterface(literal.getModifiers())) {

@@ -21,7 +21,7 @@ public class BeanInit extends BaseInit {
 		
 		String rootPackage = ParamConstant.ROOT_PACKAGE;
 		
-		List<Class> initLiteralList = FileUtil.getClasses(rootPackage, Bean.class);
+		List<Class> initLiteralList = FileUtil.getClassesV2(rootPackage, Bean.class);
 		
 		List<Class> literalInterfaceList = new ArrayList<Class>();
 		List<Class> literalNormalClass = new ArrayList<Class>();

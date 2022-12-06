@@ -20,11 +20,11 @@ java {
 
 repositories {
     // Use Maven Central for resolving dependencies.
-    //mavenCentral()
-    maven {
-        url "http://10.129.28.173:8081/repository/maven-public/"
+    mavenCentral()
+    /*maven {
+        url "http://10.129.28.174:2719/repository/maven-public/"
         allowInsecureProtocol = true
-    }
+    }*/
 }
 
 dependencies {
@@ -37,9 +37,21 @@ dependencies {
 	implementation 'org.codehaus.groovy:groovy-all:2.4.3'
 	//implementation 'org.slf4j:slf4j-api:1.6.1'
 	implementation 'org.slf4j:slf4j-simple:1.6.1'
+	//compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+	implementation 'org.reflections:reflections:0.9.11'
 }
 
-tasks.named('test') {
+task customFatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'hr.ewallet.driver.main.Application'
+    }
+    baseName = 'mini-framework-in-one'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+//tasks.named('test') {
     // Use JUnit Platform for unit tests.
     //useJUnitPlatform()
-}
+//}

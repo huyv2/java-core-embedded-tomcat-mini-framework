@@ -57,7 +57,7 @@ public class Application {
 			
 			String rootPackage = ParamConstant.ROOT_PACKAGE;
 			
-			List<Class> servletLiteralList = FileUtil.getClasses(rootPackage, HttpServlet.class);
+			List<Class> servletLiteralList = FileUtil.getClassesV2(rootPackage, HttpServlet.class);
 			for(Class literal : servletLiteralList) {
 				if (Modifier.isAbstract(literal.getModifiers())
 						|| Modifier.isInterface(literal.getModifiers())) {
@@ -70,7 +70,7 @@ public class Application {
 				context.addServletMappingDecoded(urlPattern, servletName);
 			}
 			
-			List<Class> initLiteralList = FileUtil.getClasses(rootPackage, BaseInit.class);
+			List<Class> initLiteralList = FileUtil.getClassesV2(rootPackage, BaseInit.class);
 			for(Class literal : initLiteralList) {
 				if (Modifier.isAbstract(literal.getModifiers())
 						|| Modifier.isInterface(literal.getModifiers())) {
