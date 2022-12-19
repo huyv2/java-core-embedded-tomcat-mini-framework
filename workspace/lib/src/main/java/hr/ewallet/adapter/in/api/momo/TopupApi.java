@@ -1,10 +1,10 @@
 package hr.ewallet.adapter.in.api.momo;
 
 import hr.ewallet.adapter.in.api.BaseApi;
-import hr.ewallet.adapter.in.dto.request.BaseRequestDto;
-import hr.ewallet.adapter.in.dto.request.TopupRequestDto;
-import hr.ewallet.adapter.in.dto.response.BaseResponseDto;
-import hr.ewallet.adapter.in.dto.response.TopupResponseDto;
+import hr.ewallet.adapter.in.api.dto.request.BaseRequestDto;
+import hr.ewallet.adapter.in.api.dto.request.momo.TopupRequestDto;
+import hr.ewallet.adapter.in.api.dto.response.BaseResponseDto;
+import hr.ewallet.adapter.in.api.dto.response.momo.TopupResponseDto;
 import hr.ewallet.application.port.in.momo.money.TopupUseCase;
 import hr.ewallet.driver.init.bean.BeanInit;
 

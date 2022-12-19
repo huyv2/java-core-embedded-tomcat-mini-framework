@@ -5,7 +5,7 @@ import java.lang.reflect.Modifier;
 import java.util.List;
 
 import hr.ewallet.common.constant.ParamConstant;
-import hr.ewallet.adapter.in.dto.request.BaseRequestDto;
+import hr.ewallet.adapter.in.api.dto.request.BaseRequestDto;
 import hr.lib.cache.Cache;
 import hr.lib.cache.CacheManager;
 import hr.lib.constant.CacheConstant;

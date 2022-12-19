@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import hr.ewallet.adapter.in.dto.request.BaseRequestDto;
-import hr.ewallet.adapter.in.dto.response.BaseResponseDto;
+import hr.ewallet.adapter.in.api.dto.request.BaseRequestDto;
+import hr.ewallet.adapter.in.api.dto.response.BaseResponseDto;
 import hr.lib.cache.Cache;
 import hr.lib.cache.CacheManager;
 import hr.lib.constant.CacheConstant;
