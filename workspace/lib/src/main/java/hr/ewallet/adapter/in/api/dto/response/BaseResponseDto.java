@@ -1,4 +1,4 @@
-package hr.ewallet.adapter.in.dto.response;
+package hr.ewallet.adapter.in.api.dto.response;
 
 import com.google.gson.annotations.SerializedName;
 
