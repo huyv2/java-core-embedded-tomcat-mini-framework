@@ -1,7 +1,9 @@
 package hr.ewallet.application.port.in.momo.money;
 
+import hr.ewallet.application.port.in.command.request.momo.money.TopupRequestCommand;
+import hr.ewallet.application.port.in.command.response.momo.money.TopupResponseCommand;
 import hr.ewallet.driver.init.bean.Bean;
 
 public interface TopupUseCase extends Bean {
-	boolean topup(String token, Long amount, String type);
+	TopupResponseCommand topup(TopupRequestCommand topupRequestCommand);
 }

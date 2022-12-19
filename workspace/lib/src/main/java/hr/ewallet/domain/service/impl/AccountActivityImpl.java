@@ -1,11 +1,14 @@
-package hr.ewallet.domain.account;
+package hr.ewallet.domain.service.impl;
 
-public class Activity {
-	public static Activity createActivity() {
-		return new Activity();
+import hr.ewallet.domain.account.Account;
+import hr.ewallet.domain.service.AccountActivity;
+
+public class AccountActivityImpl implements AccountActivity {
+	public static AccountActivityImpl createActivity() {
+		return new AccountActivityImpl();
 	}
 	
-	private Activity() {
+	private AccountActivityImpl() {
 		// Load gl account here
 	}
 	

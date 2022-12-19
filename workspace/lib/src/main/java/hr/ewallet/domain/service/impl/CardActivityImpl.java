@@ -1,11 +1,14 @@
-package hr.ewallet.domain.card;
+package hr.ewallet.domain.service.impl;
 
-public class Activity {
-	public static Activity createActivity() {
-		return new Activity();
+import hr.ewallet.domain.card.Card;
+import hr.ewallet.domain.service.CardActivity;
+
+public class CardActivityImpl implements CardActivity {
+	public static CardActivityImpl createActivity() {
+		return new CardActivityImpl();
 	}
 	
-	private Activity() {
+	private CardActivityImpl() {
 		// Load card gl account service here
 	}
 	
