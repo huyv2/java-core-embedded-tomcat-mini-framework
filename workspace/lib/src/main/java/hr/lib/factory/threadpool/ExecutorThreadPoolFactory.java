@@ -1,4 +1,4 @@
-package hr.lib.factory;
+package hr.lib.factory.threadpool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -11,8 +11,8 @@ import org.apache.logging.log4j.Logger;
 import hr.lib.constant.ParamConstant;
 import hr.lib.util.ResourceUtil;
 
-public class ExecutorFactory {
-	private final static Logger log = LogManager.getLogger(ExecutorFactory.class);
+public class ExecutorThreadPoolFactory {
+	private final static Logger log = LogManager.getLogger(ExecutorThreadPoolFactory.class);
 	
 	private static int corePoolSize;
 	private static int maxPoolSize;
