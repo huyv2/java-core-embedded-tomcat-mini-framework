@@ -9,13 +9,13 @@ import hr.lib.constant.CacheConstant;
 
 public class ResourceUtil {
 	public static void loadApplicationProperties() {
-		Cache applicationPropertiesCache = (Cache) CacheManager.getInstance().createCache(CacheConstant.APPLICATION_PROPERTIES);
+		Cache applicationPropertiesCache = (Cache) CacheManager.getInstance().getCache(CacheConstant.APPLICATION_PROPERTIES);
 		loadResourceToCache("lib-application", applicationPropertiesCache, null);
 	}
 	
 	public static void loadUrlPatternProperties() {
-		Cache controllerUrlPropertiesCache = (Cache) CacheManager.getInstance().createCache(CacheConstant.CONTROLLER_URL_PROPERTIES);
-		Cache requestUrlPropertiesCache = (Cache) CacheManager.getInstance().createCache(CacheConstant.REQUEST_URL_PROPERTIES);
+		Cache controllerUrlPropertiesCache = (Cache) CacheManager.getInstance().getCache(CacheConstant.CONTROLLER_URL_PROPERTIES);
+		Cache requestUrlPropertiesCache = (Cache) CacheManager.getInstance().getCache(CacheConstant.REQUEST_URL_PROPERTIES);
 		loadResourceToCache("urlPattern", controllerUrlPropertiesCache, requestUrlPropertiesCache);
 	}
 	

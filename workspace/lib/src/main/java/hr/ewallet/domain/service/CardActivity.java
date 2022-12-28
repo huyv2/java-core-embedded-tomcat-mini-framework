@@ -1,7 +1,7 @@
 package hr.ewallet.domain.service;
 
 import hr.ewallet.domain.card.Card;
-import hr.ewallet.driver.init.bean.Bean;
+import hr.lib.factory.bean.Bean;
 
 public interface CardActivity extends Bean {
 	boolean moveMoney(Card sourceCard, Card destinationCard, long amount);

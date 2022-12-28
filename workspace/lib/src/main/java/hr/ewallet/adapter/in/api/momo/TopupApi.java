@@ -1,6 +1,5 @@
 package hr.ewallet.adapter.in.api.momo;
 
-import hr.ewallet.adapter.in.api.BaseApi;
 import hr.ewallet.adapter.in.api.dto.request.BaseRequestDto;
 import hr.ewallet.adapter.in.api.dto.request.momo.TopupRequestDto;
 import hr.ewallet.adapter.in.api.dto.response.BaseResponseDto;
@@ -8,7 +7,8 @@ import hr.ewallet.adapter.in.api.dto.response.momo.TopupResponseDto;
 import hr.ewallet.application.port.in.command.request.momo.money.TopupRequestCommand;
 import hr.ewallet.application.port.in.command.response.momo.money.TopupResponseCommand;
 import hr.ewallet.application.port.in.momo.money.TopupUseCase;
-import hr.ewallet.driver.init.bean.BeanInit;
+import hr.lib.factory.api.BaseApi;
+import hr.lib.factory.bean.BeanFactory;
 
 public class TopupApi extends BaseApi {
 	private static final long serialVersionUID = 1L;
@@ -22,7 +22,7 @@ public class TopupApi extends BaseApi {
 		
 		log.debug(topupRequestDto.getToken());
 		
-		topupUseCase = (TopupUseCase) BeanInit.getInstanceByClassName(TopupUseCase.class.getName());
+		topupUseCase = (TopupUseCase) BeanFactory.getInstanceByClassName(TopupUseCase.class.getName());
 		
 		TopupRequestCommand topupRequestCommand = new TopupRequestCommand();
 		topupRequestCommand.setToken(topupRequestDto.getToken());

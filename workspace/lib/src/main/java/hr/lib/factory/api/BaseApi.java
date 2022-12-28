@@ -1,4 +1,4 @@
-package hr.ewallet.adapter.in.api;
+package hr.lib.factory.api;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,7 +19,7 @@ import hr.lib.cache.Cache;
 import hr.lib.cache.CacheManager;
 import hr.lib.constant.CacheConstant;
 import hr.lib.constant.ParamConstant;
-import hr.lib.factory.ExecutorFactory;
+import hr.lib.factory.threadpool.ExecutorThreadPoolFactory;
 import hr.lib.util.HttpUtil;
 import hr.lib.util.JsonParserUtil;
 
@@ -32,7 +32,7 @@ public abstract class BaseApi extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//super.doPost(req, resp);
 		try {
-			ExecutorService executor = ExecutorFactory.getThreadPoolExecutor();
+			ExecutorService executor = ExecutorThreadPoolFactory.getThreadPoolExecutor();
 			final AsyncContext asyncContext = req.startAsync();
 			executor.execute(new Runnable() {
 				

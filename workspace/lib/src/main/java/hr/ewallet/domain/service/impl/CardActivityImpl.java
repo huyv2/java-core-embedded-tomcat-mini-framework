@@ -4,13 +4,6 @@ import hr.ewallet.domain.card.Card;
 import hr.ewallet.domain.service.CardActivity;
 
 public class CardActivityImpl implements CardActivity {
-	public static CardActivityImpl createActivity() {
-		return new CardActivityImpl();
-	}
-	
-	private CardActivityImpl() {
-		// Load card gl account service here
-	}
 	
 	public boolean moveMoney(Card sourceCard, Card destinationCard, long amount) {
 		boolean isSuccess = false;

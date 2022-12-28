@@ -12,17 +12,27 @@ import hr.lib.cache.object.ExpireObject;
 import hr.lib.util.ResourceUtil;
 
 public class CacheManager extends CacheBase {
-	private static CacheManager cacheManager = null;
+	private static CacheManager cacheManager = new CacheManager();
 	private Timer timer = null;
 	
 	public static CacheManager getInstance() {
-		if (cacheManager == null) {
-			cacheManager = new CacheManager();
-		}
 		return cacheManager;
 	}
 	
+	public static boolean isRunning() {
+		return cacheManager != null;
+	}
+	
 	private CacheManager() {
+		
+	}
+	
+	public void init() {
+		initCacheManager();
+		initData();
+	}
+	
+	private void initCacheManager() {
 		setName("CacheManager");
 		long periodChecking;
 		try {
@@ -77,7 +87,7 @@ public class CacheManager extends CacheBase {
 		}, 0, periodChecking);
 	}
 	
-	public void init() {
+	private void initData() {
 		try {
 			for(Map.Entry<String, Object> cacheObjectMap : hashMap.entrySet()) {
 				CacheBase cache = (CacheBase)cacheObjectMap.getValue();
@@ -91,6 +101,7 @@ public class CacheManager extends CacheBase {
 			log.error(e);
 		}
 	}
+	
 	/**
 	 * Create a new eternal cache
 	 * @param name: cache's name and it's as key in cache manager

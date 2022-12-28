@@ -1,4 +1,4 @@
-package hr.ewallet.driver.init.bean;
+package hr.lib.factory.bean;
 
 import java.io.IOException;
 import java.lang.reflect.Modifier;
@@ -9,15 +9,15 @@ import hr.lib.cache.Cache;
 import hr.lib.cache.CacheManager;
 import hr.lib.constant.CacheConstant;
 import hr.lib.constant.ParamConstant;
-import hr.lib.init.BaseInit;
+import hr.lib.factory.BaseFactory;
 import hr.lib.util.FileUtil;
 
-public class BeanInit extends BaseInit {
+public class BeanFactory extends BaseFactory {
 
 	@SuppressWarnings({ "rawtypes", "deprecation", "unchecked" })
 	@Override
 	public void init() throws ClassNotFoundException, IOException, InstantiationException, IllegalAccessException {
-		Cache literalBeanCache = (Cache) CacheManager.getInstance().createCache(CacheConstant.LITERAL_BEAN_CLASS);
+		Cache literalBeanCache = (Cache) CacheManager.getInstance().getCache(CacheConstant.LITERAL_BEAN_CLASS);
 		
 		String rootPackage = ParamConstant.ROOT_PACKAGE;
 		

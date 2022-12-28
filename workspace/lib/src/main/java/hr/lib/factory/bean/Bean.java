@@ -1,4 +1,4 @@
-package hr.ewallet.driver.init.bean;
+package hr.lib.factory.bean;
 
 public interface Bean {
 

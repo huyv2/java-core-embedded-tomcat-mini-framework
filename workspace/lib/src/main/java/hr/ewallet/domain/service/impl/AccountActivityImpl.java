@@ -4,13 +4,6 @@ import hr.ewallet.domain.account.Account;
 import hr.ewallet.domain.service.AccountActivity;
 
 public class AccountActivityImpl implements AccountActivity {
-	public static AccountActivityImpl createActivity() {
-		return new AccountActivityImpl();
-	}
-	
-	private AccountActivityImpl() {
-		// Load gl account here
-	}
 	
 	public boolean moveMoney(Account sourceAccount, Account destinationAccount, long amount) {
 		boolean isSuccess = false;
